@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    testLogging.showStandardStreams = true
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(15)
+    }
+}
+
+application {
+    mainClass = 'com.tomgregory.WhatVersion'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(14)
+    }
+}
+
+task('runOn16', type: JavaExec) {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(16)
+    }
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = application.mainClass
+}
