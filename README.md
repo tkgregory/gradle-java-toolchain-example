@@ -18,3 +18,6 @@ Running the application or the tests prints out the Java version it's running on
 
 * any missing JDK version that Gradle can't find locally will be automatically downloaded
 * the application is compiled using the default JDK 14
+
+## Need Gradle support?
+Contact me if you need help with Gradle at [tom@tomgregory.com](mailto:tom@tomgregory.com).
